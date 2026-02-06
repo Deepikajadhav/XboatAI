@@ -1,0 +1,25 @@
+ .sidebar{
+    width: 25%;
+    height: 100%; 
+    gap:5px;
+ } 
+
+ *{
+    background-color: aliceblue;
+ } 
+
+ .div1{ 
+    height:25%;
+    width:25%;
+    background-color: #e3cfe6;
+    align-items: center;
+    text-align:center; 
+    color:black;
+ } 
+ .div2{ 
+    height:25%;
+    width:25%; 
+    background-color: #e3cfe6; 
+    color:black;
+
+ }

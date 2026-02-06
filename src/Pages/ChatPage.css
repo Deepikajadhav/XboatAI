@@ -1,0 +1,73 @@
+/* *{
+    background-color: #d9c3de;
+}  */
+
+.title{    
+        margin: 24px;
+        display:flex;
+       
+} 
+
+.logo{
+      height: 72px;
+}
+
+.card{
+     background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  cursor: pointer;
+}  
+
+.card p{
+    color:grey;
+    background-color: #ffffff;
+}
+
+.welcome-placeholder{ 
+    flex: 1;
+} 
+
+.welcome-placeholder h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 12px;
+} 
+
+.suggestions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.chat-page {
+    background-color: aliceblue;
+    width:100%;
+    height:100vh; 
+     display: flex;
+  height: 100vh;
+  overflow: hidden;
+ 
+} 
+
+ .left {
+  width: 260px;
+  background: #ffffff;
+  padding: 16px;
+} 
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column; 
+  padding: 24px; 
+  background: #e3cfe6; /* purple background */ 
+   align-items: center;
+  justify-content: center;
+  text-align: center;  
+  width:100%;
+    
+}

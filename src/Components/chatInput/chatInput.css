@@ -1,0 +1,18 @@
+ .chat-input-container{
+      width:90%;
+      margin: 12%;
+      /* //padding: 12%; */
+      gap:12px;
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      background: #f6f2fb;
+ } 
+
+ .chat-input-container input {
+  flex: 1;
+  /* padding-top: 52px; */
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #f6f2fb;
+}

@@ -1,0 +1,8 @@
+ .hoverFeedback {
+  opacity: 0;
+  position: absolute;
+}
+
+.message:hover .hoverFeedback {
+  opacity: 1;
+}
