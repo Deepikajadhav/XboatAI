@@ -5,8 +5,8 @@ const HistoryPage = () => {
   const { conversations } = useContext(ChatContext);
 
   return (
-    <>
-      <h1>Conversation History</h1>
+    <div className="HistoryPage">
+      <h1 >Conversation History</h1>
       {conversations.map(conv => (
         <div key={conv.id}>
           {conv.messages.map(msg => (
@@ -16,7 +16,7 @@ const HistoryPage = () => {
           <p>Feedback: {conv.subjectiveFeedback}</p>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

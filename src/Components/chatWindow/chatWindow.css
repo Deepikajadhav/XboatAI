@@ -1,5 +1,5 @@
  .chat-window {
-  height: 50px;
+  height: 15rem;
   overflow-y: auto;
   padding: 16px;
   display: flex;

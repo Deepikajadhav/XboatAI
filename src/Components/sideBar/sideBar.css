@@ -1,14 +1,14 @@
  .sidebar{
     width: 25%;
     height: 100%; 
-    gap:5px;
+    
  } 
 
  *{
     background-color: aliceblue;
  } 
 
- .div1{ 
+ .btn1{ 
     height:25%;
     width:25%;
     background-color: #e3cfe6;
@@ -16,10 +16,17 @@
     text-align:center; 
     color:black;
  } 
- .div2{ 
+ .btn2{ 
     height:25%;
     width:25%; 
     background-color: #e3cfe6; 
     color:black;
 
- }
+ } 
+
+ .btns{
+     background-color: #e3cfe6;
+     gap:45px; 
+ } 
+
+ 

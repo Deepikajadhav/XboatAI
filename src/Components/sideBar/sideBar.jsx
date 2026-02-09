@@ -1,23 +1,30 @@
  import { useNavigate } from "react-router-dom"; 
  import logo from ".././../Assets/Group 1000011097.png"
+ import edit from ".././../Assets/image 31.png"
 
 const Sidebar = ({ conversations, onNewChat, onSelectChat }) => { 
 
      const navigate = useNavigate();
   return (
-    <div className="sidebar">  
+    <div className="sidebar">   
+    <div className="btns">  
 
-      <button onClick={() => navigate("/")}>
+      <button className ="btn-1" onClick={() => navigate("/")} 
+        style={{backgroundColor:" #e3cfe6", width:"100%"}}>
          <p>  
-        <img src={logo} alt="logo" style={{height:"65px"}}/> 
-        New Chat
+        <img src={logo} alt="logo" style={{ justifyContent:"flex-start",height:"45px"}}/> 
+        New Chat  
+        <img src={edit} alt="logo" style={{justifyContent:"flex-end",height:"25px"}} />
          </p>
-      </button>
+      </button> 
 
 
-      <button onClick={() => navigate("/history")}>
+      <button className ="btn-2" onClick={() => navigate("/history")} 
+        style={{backgroundColor:" #e3cfe6 "}}>
         Past Conversations
-      </button>
+      </button> 
+      </div>
+
 
       {conversations.map((chat) => (
         <div
@@ -25,7 +32,7 @@ const Sidebar = ({ conversations, onNewChat, onSelectChat }) => {
           onClick={() => onSelectChat(chat.id)}
           className="chat-item"
         >
-          Chat {chat.id.slice(-4)}
+          Chat {String(chat.id).slice(0.8)}
         </div>
       ))}
     </div>

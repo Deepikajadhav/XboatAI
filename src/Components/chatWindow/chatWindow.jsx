@@ -6,7 +6,7 @@ import "./chatWindow.css";
 
 const ChatWindow = ({ messages , activeConversation,onFeedback}) => { 
 return( 
-    <div className="chat-window">
+    <div className="chat-window"> 
  {messages.map((msg, index) => (
   <div key={index} className={`message-row ${msg.sender === "user" ? "user" : "ai"}`}
     >   
