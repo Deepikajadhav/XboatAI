@@ -1,4 +1,5 @@
- import { useContext } from "react";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { ChatContext } from "../context/chatContext";
 
 const HistoryPage = () => {
@@ -6,16 +7,23 @@ const HistoryPage = () => {
 
   return (
     <div className="HistoryPage">
-      <h1 >Conversation History</h1>
-      {conversations.map(conv => (
+
+      <header>
+        <h1>Past Conversations</h1>
+      </header>
+
+      <nav>
+        <Link to="/">New Chat</Link>
+      </nav>
+
+      {conversations.map((conv) => (
         <div key={conv.id}>
-          {conv.messages.map(msg => (
-            <p key={msg.id}>{msg.text}</p>
+          {conv.messages.map((msg, index) => (
+            <p key={index}>{msg.text}</p>
           ))}
-          <p>Rating: {conv.rating} ⭐</p>
-          <p>Feedback: {conv.subjectiveFeedback}</p>
         </div>
       ))}
+
     </div>
   );
 };
