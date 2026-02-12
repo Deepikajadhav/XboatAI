@@ -168,13 +168,14 @@ console.log("activeConversation:", activeConversation);
        </div>
 
       <div className="chat-main"> 
-        <header>
-       <h1>Bot AI</h1>
-      </header>
+      <header>
+      <h1>Bot AI</h1>
 
-     <nav>
+  <nav>
+    <Link to="/">New Chat</Link>
     <Link to="/history">Past Conversations</Link>
-    </nav>
+  </nav>
+</header>
      
         <img src={title} alt="Title" className="title" />
 
