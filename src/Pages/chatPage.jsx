@@ -101,7 +101,7 @@ const sendMessage = (text) => {
 }
 
 
-  return reply || "Sorry, I did not understand your query!";
+  return reply || "Sorry, Did not understand your query!";
 };
 
   // Save conversation

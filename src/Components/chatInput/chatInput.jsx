@@ -14,7 +14,7 @@ const ChatInput = ({ onSend, saveConversation, activeConversation }) => {
   return (
     <form onSubmit={handleSubmit} className="chat-input-container">
       <input
-        placeholder="Message Bot AI…"
+        placeholder="Message Bot AI..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
        // onKeyDown={(e) => e.key === "Enter" && handleSend()}
