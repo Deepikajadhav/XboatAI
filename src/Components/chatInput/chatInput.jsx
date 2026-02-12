@@ -17,6 +17,7 @@ const ChatInput = ({ onSend, saveConversation, activeConversation }) => {
         placeholder="Message Bot AI…"
         value={input}
         onChange={(e) => setInput(e.target.value)}
+       // onKeyDown={(e) => e.key === "Enter" && handleSend()}
       />
 
       <button type="submit">Ask</button>

@@ -1,5 +1,3 @@
-import React, { useEffect, useRef } from "react";
-import Message from "../message/message"; 
 import aiAvatar from "../../Assets/Group 1000011097.png" 
 import userAvatar from "../../Assets/Group 1000011096.png"
 import "./chatWindow.css";

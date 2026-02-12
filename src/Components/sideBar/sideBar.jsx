@@ -2,18 +2,18 @@
  import logo from ".././../Assets/Group 1000011097.png"
  import edit from ".././../Assets/image 31.png"
 
-const Sidebar = ({ conversations, onNewChat, onSelectChat }) => { 
+const Sidebar = ({ conversations, startNewChat, onSelectChat }) => { 
 
      const navigate = useNavigate();
-  return (
-    <div className="sidebar">   
-    <div className="btns">  
+     return (
+     <div className="sidebar">   
+     <div className="btns">  
 
-      <button className ="btn-1" onClick={() => navigate("/")} 
+      <button className ="btn-1" onClick={startNewChat} 
         style={{backgroundColor:" #e3cfe6", width:"100%"}}>
          <p>  
         <img src={logo} alt="logo" style={{ justifyContent:"flex-start",height:"45px"}}/> 
-        New Chat  
+          New Chat  
         <img src={edit} alt="logo" style={{justifyContent:"flex-end",height:"25px"}} />
          </p>
       </button> 

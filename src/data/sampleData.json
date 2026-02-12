@@ -1,12 +1,22 @@
- {
-  "Hi": "Hello! How can I help you?",
-  
-  "Hi, what is the weather": "It looks sunny today.",
-  "Hi, what is the temperature": "The temperature is around 28°C.",
-  "Hi, how are you": "I am doing great! 😊",
-  "Hi, what is my location": "You appear to be in your home city."
 
-}  
+ [
+  {
+    "keywords": ["hi"],
+    "reply": "Hi there 😊 How can I help you?"
+  },
+  {
+    "keywords": ["weather", "temperature"],
+    "reply": "🌤️ I can help with weather. Tell me your city."
+  },
+  {
+    "keywords": ["location", "where am i"],
+    "reply": "📍 I can’t detect location yet, but you can tell me where you are."
+  } ,
+  {
+    "keywords": ["How are you?"],
+    "reply":"AS an AI agent i dont havve an details"
+  }
+]
 
 
 

@@ -2,8 +2,7 @@ import React, { useState, useContext } from "react";
 import ChatWindow from "../Components/chatWindow/chatWindow";
 import ChatInput from "../Components/chatInput/chatInput";
 import Sidebar from "../Components/sideBar/sideBar";
-import sampleResponses from "../data/sampleData.json";
-import { aiStubs } from "../data/aiStubs";
+import sampleData from "../data/sampleData.json"
 import { ChatContext } from "../context/chatContext";
 import "./ChatPage.css";
 import title from "../Assets/Bot AI (1).png";
@@ -13,11 +12,12 @@ const ChatPage = () => {
   const {
     conversations,
     setConversations,
-    savedConversations,
-    setSavedConversations
+    setSavedConversations,
+    activeId,
+    setActiveId,
   } = useContext(ChatContext); 
-const [activeId, setActiveId] = useState(null);
-const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+//const [activeId, setActiveId] = useState(null);
+const [isSidebarOpen, setIsSidebarOpen] = useState(false); 
 
 // const [message, setMessage] = useState([]);
 
@@ -88,14 +88,13 @@ const sendMessage = (text) => {
     )
   );
 };
- 
 
 
    const getAIResponse = (userText) => {
   const text = userText.toLowerCase().trim();
-  let reply = null;
+  let reply = null; 
 
-    for (const item of aiStubs) {
+    for (const item of sampleData) {
   if (item.keywords.some(k => text.includes(k))) {
     return item.reply;
   }
@@ -114,12 +113,29 @@ const sendMessage = (text) => {
       { ...activeConversation, savedAt: new Date().toISOString() }
     ]);
 
-  };  
+  }; 
+
+   const handleFeedback = (messageId, feedback) => {
+  setConversations(prev =>
+    prev.map(conv =>
+      conv.id === activeId
+        ? {
+            ...conv,
+            messages: conv.messages.map(msg =>
+              msg.id === messageId
+                ? { ...msg, feedback }
+                : msg
+            )
+          }
+        : conv
+    )
+  );
+};
+
 
   console.log("conversations:", conversations);
 console.log("activeId:", activeId);
-console.log("activeConversation:", activeConversation);
-
+console.log("activeConversation:", activeConversation); 
 
 
   return (
@@ -130,27 +146,32 @@ console.log("activeConversation:", activeConversation);
           conversations={conversations}
           startNewChat={startNewChat}
           setActiveId={setActiveId} 
+          closeSidebar={() => setIsSidebarOpen(false)}
         /> 
       </div> 
-      {/* Overlay */}
-     {isSidebarOpen && (
-      <div
-          className="overlay"
-          onClick={() => setIsSidebarOpen(false)}
-      />
-      )}
+      {/* Overlay */}    
+      {isSidebarOpen && (
+    <div
+      className="overlay"
+      onClick={() => setIsSidebarOpen(false)}
+    />
+  )}
+       
+       <div className="mobile-header">
+        <button
+              className="hamburger"
+              onClick={() => setIsSidebarOpen(true)}
+        >
+             ☰
+       </button> 
+       </div>
 
       <div className="chat-main"> 
-         <div className="mobile-header">
-      {/* <button
-        className="menu-btn"
-        onClick={() => setIsSidebarOpen(true)}
-      >
-        ☰
-      </button> */}
+        
+     
         <img src={title} alt="Title" className="title" />
 
-        {!activeConversation ? (
+        {!activeConversation || startNewChat ? (
           <div className="welcome-placeholder">
             <h2>How Can I Help You Today?</h2>
             <img src={logo} alt="logo" className="logo" />
@@ -166,10 +187,10 @@ console.log("activeConversation:", activeConversation);
           <div className="chat-bar">
           <ChatWindow messages={activeConversation.messages} 
            activeConversation={activeConversation}
-          //onFeedback={handleFeedback}  
+          onFeedback={handleFeedback}  
           /> 
            </div> 
-        )}  
+        )}   
        
        <div className="chat-input">
         <ChatInput
@@ -178,7 +199,6 @@ console.log("activeConversation:", activeConversation);
           activeConversation={activeConversation}
         /> 
         </div>
-       </div>
     </div>
     </div>
   );
