@@ -7,6 +7,7 @@ import { ChatContext } from "../context/chatContext";
 import "./ChatPage.css";
 import title from "../Assets/Bot AI (1).png";
 import logo from "../Assets/Group 1000011097.png";
+import { Link } from "react-router-dom";
 
 const ChatPage = () => {
   const {
@@ -101,7 +102,7 @@ const sendMessage = (text) => {
 }
 
 
-  return reply || "Sorry, Did not understand your query!";
+  return reply || <p>"Sorry, Did not understand your query!"</p>
 };
 
   // Save conversation
@@ -167,11 +168,17 @@ console.log("activeConversation:", activeConversation);
        </div>
 
       <div className="chat-main"> 
-        
+        <header>
+       <h1>Bot AI</h1>
+      </header>
+
+     <nav>
+    <Link to="/history">Past Conversations</Link>
+    </nav>
      
         <img src={title} alt="Title" className="title" />
 
-        {!activeConversation || startNewChat ? (
+        {!activeConversation ? (
           <div className="welcome-placeholder">
             <h2>How Can I Help You Today?</h2>
             <img src={logo} alt="logo" className="logo" />
