@@ -1,5 +1,4 @@
-
- [
+[
   {
     "keywords": ["hi"],
     "reply": "Hi there 😊 How can I help you?"
@@ -11,10 +10,14 @@
   {
     "keywords": ["location", "where am i"],
     "reply": "📍 I can’t detect location yet, but you can tell me where you are."
-  } ,
+  },
   {
-    "keywords": ["How are you?"],
-    "reply":"AS an AI agent i dont havve an details"
+    "keywords": ["how are you"],
+    "reply": "As an AI agent, I don’t have feelings, but I’m here to help you!"
+  },
+  {
+    "keywords": ["rest", "rest api", "restful api"],
+    "reply": "RESTful APIs are designed around the REST (Representational State Transfer) architecture, which uses HTTP requests to access and manipulate data. They follow a stateless, client-server, cacheable communications protocol."
   }
 ]
 
